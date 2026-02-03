@@ -1,5 +1,11 @@
 # husky-image-guard
 
+## 1.0.6
+
+### Patch Changes
+
+- [`5d0db8e`](https://github.com/tcisse/husky-image-guard/commit/5d0db8e67c02905ba551e4598547db3999180472) - Fix GitHub Actions workflow for automated npm publishing
+
 ## 1.0.5
 
 ### Patch Changes
