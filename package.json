@@ -28,8 +28,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/tcisse/husky-image-guard.git"
   },
+  "bugs": {
+    "url": "https://github.com/tcisse/husky-image-guard/issues"
+  },
+  "homepage": "https://github.com/tcisse/husky-image-guard#readme",
   "peerDependencies": {
     "husky": ">=8.0.0"
   },

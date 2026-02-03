@@ -1,6 +1,11 @@
 # husky-image-guard
 
+[![npm version](https://img.shields.io/npm/v/husky-image-guard.svg)](https://www.npmjs.com/package/husky-image-guard)
+[![GitHub](https://img.shields.io/github/license/tcisse/husky-image-guard)](https://github.com/tcisse/husky-image-guard)
+
 > Un hook Husky pour verifier la taille des images avant un push Git. Empêchez les images trop lourdes d'être poussées dans votre repository.
+
+GitHub: https://github.com/tcisse/husky-image-guard
 
 ## Fonctionnalites
 
