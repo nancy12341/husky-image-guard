@@ -42,5 +42,5 @@ jobs:
           commit: "chore: version packages"
           title: "chore: version packages"
         env:
-          GITHUB_TOKEN: ${{ secrets.HUSKY_GITHUB_TOKEN }}
+          HUSKY_GITHUB_TOKEN: ${{ secrets.HUSKY_GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
