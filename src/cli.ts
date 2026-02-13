@@ -110,7 +110,7 @@ async function main() {
 
   if (config.mode === 'resize' && !result.success && result.oversizedFiles.length > 0) {
     const resizeResult = await resizeOversizedImages(result.oversizedFiles, result.maxSizeBytes);
-    process.exit(1);
+    process.exit(resizeResult.failedFiles.length === 0 ? 0 : 1);
   }
 
   process.exit(result.success ? 0 : 1);
